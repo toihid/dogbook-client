@@ -56,13 +56,13 @@ function PageHome() {
   return (
     <>
       <Grid
-        templateColumns={["1fr", "1fr", "1fr 1fr 1fr"]}
+        templateColumns={{ base: "1fr", md: "1fr 1fr", lg: "1fr 1fr 1fr" }}
         gap={6}
         my={5}
         mx="auto"
         className="container"
       >
-        <GridItem colSpan={3} textAlign="center">
+        <GridItem colSpan={{ base: 1, md: 2, lg: 3 }} textAlign="center">
           <HStack display="flex" justifyContent="space-between">
             <Heading as="h1" size="2xl" color="teal.500" mb={5}>
               Meet the dogs
@@ -74,14 +74,15 @@ function PageHome() {
             </Link>
           </HStack>
         </GridItem>
-
         {dogs &&
           dogs.map((dog) => (
-            <Card
-              key={dog._id}
-              dog={dog}
-              deleteDog={() => deleteDog(dog._id)}
-            />
+            <GridItem key={dog._id}>
+              <Card
+                key={dog._id}
+                dog={dog}
+                deleteDog={() => deleteDog(dog._id)}
+              />
+            </GridItem>
           ))}
       </Grid>
     </>

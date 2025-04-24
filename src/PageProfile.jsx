@@ -40,13 +40,13 @@ function PageProfile() {
     <>
       <div className="container profile-page">
         <Grid
-          templateColumns={["1fr", "1fr", "1fr 2fr 1fr"]}
+          templateColumns={{ base: "1fr", md: "1fr 1fr", lg: "1fr 1fr 1fr" }}
           gap={6}
           width="1000px"
           maxW="100%"
           mx="auto"
         >
-          <GridItem colSpan={3} textAlign="center">
+          <GridItem colSpan={{ base: 1, md: 2, lg: 3 }} textAlign="center">
             <HStack display="flex" justifyContent="space-between" pb={5}>
               <Heading as="h1" size="2xl" color="teal.500" mb={5}>
                 Profile of the dog

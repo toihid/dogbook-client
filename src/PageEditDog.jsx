@@ -180,14 +180,14 @@ const FormNewDog = () => {
     <div className="newDogContainer">
       <form onSubmit={handleSubmit}>
         <Grid
-          templateColumns={["1fr", "1fr", "1fr 4fr"]}
+          templateColumns={{ base: "1fr", md: "1fr 1fr", lg: "1fr 1fr 1fr" }}
           gap={6}
           my={5}
-          width="1000px"
-          maxW="80%"
+          maxW="100%"
           mx="auto"
+          className="container"
         >
-          <GridItem colSpan={2} textAlign="center">
+          <GridItem colSpan={{ base: 1, md: 2, lg: 3 }} textAlign="center">
             <HStack display="flex" justifyContent="space-between" pb={5}>
               <Heading as="h1" size="2xl" color="teal.500" mb={5}>
                 Edit the dog's profile
@@ -201,7 +201,7 @@ const FormNewDog = () => {
               </Box>
             </HStack>
           </GridItem>
-          <Box>
+          <GridItem colSpan={{ base: 1, md: 1, lg: 1 }}>
             {(previewUrl || dog.image) && (
               <>
                 <Text>Preview: {isnewImage}</Text>
@@ -238,8 +238,8 @@ const FormNewDog = () => {
               <Checkbox.Control />
               <Checkbox.Label>Present</Checkbox.Label>
             </Checkbox.Root>
-          </Box>
-          <Box>
+          </GridItem>
+          <GridItem colSpan={{ base: 1, md: 2, lg: 2 }}>
             <Field.Root orientation="horizontal">
               <Field.Label>Name</Field.Label>
               <Box
@@ -359,7 +359,7 @@ const FormNewDog = () => {
                 {successMessage}
               </Text>
             )}
-          </Box>
+          </GridItem>
         </Grid>
       </form>
     </div>

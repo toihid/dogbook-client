@@ -137,7 +137,7 @@ const FormNewDog = () => {
   };
 
   return (
-    <div className="newDogContainer">
+    <div className="newDogContainer container">
       <form onSubmit={handleSubmit}>
         <Grid
           templateColumns={["1fr", "1fr", "1fr 4fr 1fr"]}
