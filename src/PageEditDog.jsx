@@ -263,7 +263,6 @@ const FormNewDog = () => {
                 )}
               </Box>
             </Field.Root>
-
             <Field.Root orientation="horizontal">
               <Field.Label>Nick name</Field.Label>
               <Box
